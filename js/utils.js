@@ -8,13 +8,11 @@ function Utils(errorOutputId) { // eslint-disable-line no-unused-vars
         script.setAttribute('async', '');
         script.setAttribute('type', 'text/javascript');
         script.addEventListener('load', () => {
-            if (cv.getBuildInformation)
-            {
+            if (cv.getBuildInformation){
                 console.log(cv.getBuildInformation());
                 onloadCallback();
             }
-            else
-            {
+            else{
                 // WASM
                 cv['onRuntimeInitialized']=()=>{
                     console.log(cv.getBuildInformation());
